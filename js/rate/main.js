@@ -23,17 +23,17 @@ function create(){
 }
 
 function readAcc(event){
-	accX = event.accelerationIncludingGravity.x / 10;
-	accY = event.accelerationIncludingGravity.y / 10;
-	accZ = event.accelerationIncludingGravity.z / 10;
+	accX = 0.1 + event.accelerationIncludingGravity.x / 12;
+	accY = 0.1 + event.accelerationIncludingGravity.y / 12;
+	accZ = 0.1 + event.accelerationIncludingGravity.z / 12;
 	
 	music.setRate(accX);
 	music.setDetune(accY);
 	music.setVolume(accZ);
 	
-	textRate.text = 'Rate: ' + config.rate;
-	textDetune.text = 'Detune: ' + config.detune;
-	textVol.text = 'Volume: ' + config.volume;
+	textRate.text = 'Rate: ' + accX;
+	textDetune.text = 'Detune: ' + accY;
+	textVol.text = 'Volume: ' + accZ;
 }
 
 function plugIns(){
